@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <title>Document</title>
+    </head>
+    <style>
+        *{
+            transition: all 0.5s;
+        }
+        .my-grid{
+            background:pink;
+        }
+        .child{
+            background:rgb(234, 206, 206);
+            border:1px solid grey;
+            height:100px;
+        }
+        body{
+            height:1000px;
+        }
+    </style>
+    <body>
+
+        <!-- <button
+            id="firstpop"
+            type="button" 
+            class="btn btn-secondary"
+            data-container="body"
+            data-toggle="popover"
+            data-content="hello fucking world"
+                >left</button> -->
+        <!-- <button type="button" class="btn btn-sm btn-dark text-light" data-toggle="modal" data-target="#myModal">
+            launch modal
+        </button>
+        <div id='myModal' class="modal fade">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        <!-- <div id="danger" class="alert alert-danger alert-dismissible fade show">
+            <h1>danger</h1>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+            <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div> -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center" data-theme="dark">
+            <a href="twitter.com" class="col text-light nav-link text-center">twitter</li>
+            <a href="facebook.com" class="col text-light nav-link text-center">facebook</li>
+            <a href="#" class="col text-light nav-link text-center">contact us</li>
+        </nav>
+        <div class="container">
+             <div style="height:200px;margin:5px;" class="row my-grid bg-dark">
+                <div class="col-3 offset-3 order-1 order-lg-2 child text-danger">
+                    <p>some random text 1</p>
+                </div>
+                <div class="col-3 offset-3 order-2 order-lg-0 child text-success">
+                    <p>some random text 2</p>
+                </div>
+                <div class="col-3 order-3 order-lg-1 child bg-secondary text-light">
+                    <p>some random text 3</p>
+                </div>
+                <div class="col-3 order-4 order-lg-3 child">
+                    <p>some random text 4</p>
+                </div>
+            </div>
+            <!-- <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="text-light bg-dark">
+                            <tr>
+                                <th>id</th>
+                                <th>country</th>
+                                <th>contient</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Spain</td>
+                                <td>Europa</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Algeria</td>
+                                <td>Africa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+            <!-- <div class="col-md-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Eurasian_wolf_2.jpg" class="img-fluid img-thumbnail">
+                <p>Of all members of the genus Canis, the wolf is most specialized for 
+                    cooperative game hunting as demonstrated by its physical adaptations
+                     to tackling large prey, its more social nature, and its highly advanced
+                      expressive behaviour, including individual or group howling. It travels
+                       in nuclear families consisting of a mated pair accompanied by their 
+                       offspring. </p>
+            </div>
+             <div class="card">
+                <div class="card-header">
+                    <h3 class="text-black-50 text-center lead">Log in</h3>
+                    <small class="text-muted">hello</small>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="input-group">
+                </div>
+                <div class="card-footer row justify-content-center">
+                    <button class="btn btn-danger text-light">del</button>
+                    <button class="btn btn-success text-light">Add</button>
+                </div>
+            </div> 
+        </div> -->
+
+        <!-- js files -->
+        <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+        <script>
+            $('#firstpop').popover({
+                html:true,
+                placement:'left',
+                title:'Popover Title',
+                content:'<p>hola , Yo soy <b>Abderahim</b></p>',
+                template:`<div class='popover'>
+                            <div class='popover-header'></div>
+                            <div class='popover-body'></div>
+                            <div class='popover-footer'></div>
+                        </div>`
+            });
+            $('#firstpop').on('inserted.bs.popover',()=>{console.log('inserted')})
+        </script>
+        <script>
+            // $('#danger').on('close.bs.alert',()=>{
+            //     console.log('close')
+            // })
+            // $('#danger').on('closed.bs.alert',()=>{
+            //     console.log('closed')
+            // })
+            // window.onload = () => {
+            //     let ask = prompt("what's your name ?")
+            //     if (ask!='ita27') {
+            //         document.getElementById('danger').style.display = 'block'
+            //         setTimeout(() => {
+            //             document.getElementById('danger').style.display = 'none'
+            //         }, 2500);
+            //     }else { document.body.innerHTML += `<div id="succes" class="alert alert-success alert-dismissible fade show">
+            //                                         <h1>danger</h1>
+            //                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+            //                                         <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+            //                                     </div>`
+            //                                 }
+            // }
+        </script>
+        <!-- <script>
+            $('#tooltip').tooltip({
+                title:`<h3>tooltip</h3>
+                    <p>this is my first tooltip</p>`,
+                html:true,
+                placement:'bottom',
+                trigger:'hover',
+                template:`<div class='tooltip'>
+                            <div class='arrow'></div>
+                            <div class='tooltip-inner'></div>
+                        </div>`
+            })
+            $('#myModal').on('show.bs.modal',()=>{console.log('show')})
+            $('#myModal').on('shown.bs.modal',()=>{console.log('shown')})
+            $('#myModal').on('hide.bs.modal',()=>{console.log('hide')})
+            $('#myModal').on('hidden.bs.modal',()=>{console.log('hidden')})
+          </script> -->
+    </body>
+</html>
